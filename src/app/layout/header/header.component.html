@@ -1,0 +1,19 @@
+
+<div class="header">
+    <img src="assets/kdnlogo.png" class="headerLogo" height="50">
+    <nav>
+        <div class="desktop_menu">
+            <a [routerLink]="['/dashboard']" [routerLinkActive]="'linkactive'">Dashboard</a>
+            <a [routerLink]="['/details']">Details</a>
+            <a>Xyz</a>
+            <a>Xyz</a>
+            <a href="javascript:void(0)" data-backdrop="static"
+                data-keyboard="false" (click)="checkRatingStats()">Give Feedback</a>
+            <a href="javascript:void(0)"><img src="assets/notification.svg" style="width: 20px;">
+            </a>
+            <a href="javascript:void(0)" (click)="checkRatingLogout()" data-toggle="modal" data-target="#NachModel" data-backdrop="static" data-keyboard="false">
+                <img src="assets/logout.png" style="cursor: pointer;">
+            </a>
+        </div>
+    </nav>
+</div>
