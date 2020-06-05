@@ -396,9 +396,9 @@ a.btn:hover {
   display: inline-flex;
   float: right;
   img {
-    height: 26px;
+    height: 21px;
     margin-top: 3px;
-    margin-right: 20px;
+    margin-right: 0px;
     cursor: pointer;
   }
 }
@@ -749,12 +749,24 @@ h1 {
 }
 
 .activeSty1 {
-  border-bottom: 2px solid #004788;
   margin-bottom: 5px;
   color: #004788 !important;
   font-weight: 600;
+  background-color: #f4faff !important;
 }
-
+.headerNav_Link1 a.activeSty1:before{
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 6px solid #222c50;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+}
 /*// end*/
 
 // loan details page style
@@ -856,51 +868,6 @@ app-kbmenu {
   width: 100%;
 }
 
-//   help center stylesheet
-.banner_section {
-  background-image: url("assets/helpbanner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 185px;
-  border-bottom: 1px solid lightgray;
-  margin-bottom: -10px;
-  input {
-    width: 450px;
-    background: white;
-    border: 0;
-    padding: 5px 15px;
-    color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 3px 18px 0 rgba(0, 0, 0, 0.15);
-    &:focus {
-      outline: none;
-    }
-  }
-  button {
-    width: 4%;
-    padding: x;
-    padding: 5px 15px;
-    background: #fff;
-    height: 30px;
-    padding-bottom: 11px;
-    border: 1px solid gray;
-    border-left: 0px 1px 0px 0px solid gray !important;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 3px 18px 0 rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    border-right: none;
-    border-top: none;
-    border-bottom: none;
-  }
-  img {
-    height: 13px;
-    margin-left: -5px;
-  }
-  label {
-    
-  }
-  .input_search {
-    margin-top: 70px;
-  }
-}
 
 // notification and alert details stylesheet
 .trending_card {
@@ -921,16 +888,6 @@ app-kbmenu {
     border-radius: 15px;
     margin-right: 10px;
   }
-}
-.trending_card2 {
-  background-image: url("assets/tile-image1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.right_side_card {
-  background-image: url("assets/tile-image3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .notification_center_container {

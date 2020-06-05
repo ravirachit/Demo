@@ -1,1 +1,159 @@
-<app-header></app-header>
+<div class="dashboard_navbar1">
+    <div class="nav_container1">
+        <div class="headerNav_Link1">
+            <a [routerLink]="['/dashboard']" class="header_logo_anch"><img src="assets/kdnlogo.png" height="50"></a>
+            <a [routerLink]="['/dashboard']" class="activeSty1">Dashboard</a>
+            <a [routerLink]="['/faq']">FAQ</a>
+            <a [routerLink]="['/customerSupport']">Help & Support</a>
+        </div>
+        <div class="profile_icon_div">
+            <div>
+                <div class="display-flex">
+                    <div class="profile_circle">KKS</div>
+                    <div class="user_name">Kundan</div>
+                    <div class="dropdown theme-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="color: white;"><img src="assets/dots.svg"
+                                class="Heaer_profile_Menu_icon"></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Update Profile</a>
+                            <a class="dropdown-item" [routerLink]="['/']">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container1">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="page-title loanTitle">
+                <h2 class="dashboard_title" style="margin-left: 24px;">Logged In User</h2>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="tile_user_info">
+                            <p class="welcome_user_text">WELCOME</p>
+                            <P class="tile_user_name">Kundan Kumar Singh</P>
+                        </div>
+                        <div>
+                            <P class="last_login">Last Login &nbsp;&nbsp;<span>04 June, 2020 11:20pm</span></P>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="userInfo-card-container">
+                        <div class="flex-Display">Email: <div class="left_45">kdn.rthr@gmail.com</div>
+                        </div>
+                        <div class="flex-Display">Phone: <div class="left_38">+918770429826</div>
+                        </div>
+                        <div class="flex-Display">Home Address: <div class="left_24">
+                                B1-1205<br>Panchsheel Greens 2 -
+                                Greater Noida West<br>UP-201009</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card congrats_card">
+                <div class="card-container">
+                    <div class="offer_display_flex"><img src="assets/offer_image.svg" class="offer_icon"><span
+                            class="offer_vl_line"></span>
+                        <div>
+                            <h2 class="offer_header">Congratulations !!</h2>
+                            <p class="offer_p">You are doing awesome work !!</p>
+                            <button type="submit" class="btn">Check Status</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="page-title loanTitle">
+                <h2 class="dashboard_title" style="margin-left: 24px;">Employee List</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card loan_card">
+                        <div align="center" class="loanheader">
+                            <span><img src="assets/complain.svg" class="empImg"></span>
+                        </div>
+                        <div class="display_flex" style="position: relative;">
+                            <div class="loan_hr_div">
+                                <hr class="loan_head_hr">
+                            </div>
+                            <div class="batch_div"><a class="batch_btn" style="background:#FF9800">Current</a></div>
+                        </div>
+                        <div class="loan_card_container">
+                            <div class="loan_display_flex">Employee Name<div>Ravi Kumar</div>
+                            </div>
+                            <div class="loan_display_flex">Joining Date<div>DD MMM, YYYY</div>
+                            </div>
+                            <div class="loan_display_flex">Package<div>INR 00,000.00</div>
+                            </div>
+                            <div class="loan_display_flex">Notice Period<div>03 months</div>
+                            </div>
+                            <div class="loan_display_flex">Total Experience<div>00 Yrs/months</div>
+                            </div>
+                        </div>
+                        <div class="row loanFooterBtn">
+                            <div class="col-sm-12" align="right" style="padding-bottom:15px;">
+                                <a class="R_ecs">Go for Salary Slip</a><br>
+                                <!-- <hr class="R_ecsHr"> -->
+                            </div>
+                            <div class="col-sm-6 viewDetailSty">
+                                <a (click)="goToDetails()">View Details</a>
+                            </div>
+                            <div class="col-sm-6 paynowSty">
+                                <a class="">Get Record</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card loan_card">
+                        <div align="center" class="loanheader">
+                            <span><img src="assets/complain.svg" class="empImg"></span>
+                        </div>
+                        <div class="display_flex" style="position: relative;">
+                            <div class="loan_hr_div">
+                                <hr class="loan_head_hr">
+                            </div>
+                            <div class="batch_div"><a class="batch_btn" style="background:#4caf50">Active</a></div>
+                        </div>
+                        <div class="loan_card_container">
+                            <div class="loan_display_flex">Employee Name<div>Ravi Kumar</div>
+                            </div>
+                            <div class="loan_display_flex">Joining Date<div>DD MMM, YYYY</div>
+                            </div>
+                            <div class="loan_display_flex">Package<div>INR 00,000.00</div>
+                            </div>
+                            <div class="loan_display_flex">Notice Period<div>03 months</div>
+                            </div>
+                            <div class="loan_display_flex">Total Experience<div>00 Yrs/months</div>
+                            </div>
+                        </div>
+                        <div class="row loanFooterBtn">
+                            <div class="col-sm-12" align="right" style="padding-bottom:15px;">
+                                <a class="R_ecs">Go for Salary Slip</a><br>
+                                <!-- <hr class="R_ecsHr"> -->
+                            </div>
+                            <div class="col-sm-6 viewDetailSty">
+                                <a (click)="goToDetails()">View Details</a>
+                            </div>
+                            <div class="col-sm-6 paynowSty">
+                                <a class="">Get Record</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
