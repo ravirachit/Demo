@@ -1,0 +1,95 @@
+
+<div class="row" style="background: #fff;height: 100vh;">
+    <div class="col-sm-8 bannerSection">
+      <div class="col-sm-12">
+        <img src="assets/kdnlogo.png" height="60"><br><br>
+      </div>
+      <div class="col-sm-12">
+        <img class="backimages" src="assets/login-bg.png">
+    </div>
+    </div>
+  
+  <div class="col-sm-4 signUp_right_sec">
+      <h4>Welcome to imrthr Employee Portal</h4>
+       <div class="">
+         <div class="form" >
+           <form class="signUp" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+             <!-- <img src="assets/logo.png"> -->
+             <div>
+
+                <div class="signUp-input-container">
+                    <label for="name">Name</label>
+                    <div class="input-icons">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                      <input class="input-field" type="text"  placeholder="Please enter your name" formControlName="name" >
+                      </div>
+                    </div>
+                    <span *ngIf="signUpForm.controls['name'].invalid && (signUpForm.controls['name'].touched || invalidForm)" >
+                      <span *ngIf="signUpForm.controls['name'].errors.required" class="errors1"> Name is required.</span>
+                      <span *ngIf="signUpForm.controls['name'].errors?.pattern" class="errors1"> Enter full name.</span>
+                      </span>
+
+                    <div class="signUp-input-container">
+                        <label for="email">Email</label>
+                        <div class="input-icons">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                          <input class="input-field" type="text"  placeholder="Please enter your email" emailOnly formControlName="email">
+                          </div>
+                        </div>
+                        <span *ngIf="signUpForm.controls['email'].invalid && (signUpForm.controls['email'].touched || invalidForm)" >
+                          <span *ngIf="signUpForm.controls['email'].errors.required" class="errors1">Email is required.</span>
+                          <span *ngIf="signUpForm.controls['email'].errors.pattern" class="errors1">enter valid email.</span>
+                          </span>
+     
+             <div class="signUp-input-container">
+               <label for="phone">Mobile</label>
+               <div  class="input-icons">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                 <input class="input-field" type="text" maxlength="10" placeholder="Please enter your mobile number" numbersOnly formControlName="phone">
+               </div>
+            </div>
+            <span *ngIf="signUpForm.controls['phone'].invalid && (signUpForm.controls['phone'].touched || invalidForm)" >
+              <span *ngIf="signUpForm.controls['phone'].errors.pattern" class="errors1">Enter valid phone number.</span>
+              </span>
+
+               <div class="signUp-input-container">
+                 <label for="password">Password</label>
+                 <div class="input-icons">
+                    <i class="fa fa-unlock" aria-hidden="true"></i>
+                   <input class="input-field" type="password" placeholder="Enter password" formControlName="password">
+                 </div>
+               </div>
+               <span *ngIf="signUpForm.controls['password'].invalid && (signUpForm.controls['password'].touched || invalidForm)" >
+                <span *ngIf="signUpForm.controls['password'].errors.required" class="errors1"> Password is required.</span>
+                <span *ngIf="signUpForm.controls['password'].errors.pattern" class="errors1">{{errorMssg.signUp.passwordFormat}}</span>
+               </span>
+
+               <div class="signUp-input-container">
+                <label for="cPassword">Confirm Password</label>
+                <div class="input-icons">
+                   <i class="fa fa-unlock" aria-hidden="true"></i>
+                  <input class="input-field" type="password" placeholder="Enter password" formControlName="cPassword">
+                </div>
+              </div>
+              <span *ngIf="signUpForm.controls['cPassword'].invalid && (signUpForm.controls['cPassword'].touched || invalidForm)" >
+                <span *ngIf="signUpForm.controls['cPassword'].errors.required" class="errors1"> Password is required.</span>
+                </span>
+                <span *ngIf='matchPassword' class="errors1">{{passwordErrorMssg}}</span>
+
+               <div>
+                 <button type="submit" class="signUpBtn" >SIGNUP</button>
+             </div>
+           </div>
+           
+           <div class="signUp_footer">
+              <div class="help_support1">Help & Support</div>
+              <p>
+                  <img src="assets/help_phone.png">8770 42 9826<span>[ Toll Free ]</span><br>
+                  <img src="assets/help_mail-icon.png"> customercare@kdnrthr.in<br>
+                  <small>Copyright @2020 kdnrthr. All rights reserved.</small>
+                </p>
+                </div>
+         </form>
+         </div>
+       </div>
+  </div>

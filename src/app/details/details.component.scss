@@ -1,0 +1,73 @@
+table, td, th {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    text-align: center;
+   
+}
+table {
+    width: 100%;
+    margin-top: 37px;
+}
+td{
+    height: 30px;
+    font-size: 14px;
+}
+th{
+    font-size: 15px;
+    height: 30px;
+    background-color: lightgray;
+}
+.mat-card{
+    margin: 20px;
+    box-shadow: 0px 2px 1px 2px whitesmoke (0, 0, 0, 0), 0px 1px 1px 0px whitesmoke (0, 0, 0, 0), 0px 1px 3px 0px whitesmoke (0, 0, 0, 0);
+}
+p{
+    font-weight: bold;
+    padding-left: 10px;
+    background: #b3e5fc;
+    border-left: 5px solid blue;
+    position: absolute;
+    margin-left: -16px;
+    width: 100%;
+    top: 0px;
+}
+.textGdr{
+margin-top: 36px;
+margin-left:14px;
+}
+.textarea{
+    margin-top: -14px ;
+}
+.subm{
+    text-align: center;
+}
+
+.modal-dialog  {
+    max-width: 100% !important;
+}
+
+.p1{
+    
+    font-weight: bold;
+    background: #b3e5fc;
+    border-left: 5px solid blue;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    height: 31px;
+    padding-top: 2px;
+    font-size: 16px;
+}
+.fa1{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    margin-left: 86%;
+    font-size: 22px;
+}
+.fa{
+    font-size: 16px;
+    margin-left: 12px;
+}

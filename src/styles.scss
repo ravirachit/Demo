@@ -19,7 +19,7 @@ body {
   overflow-x: hidden !important;
   overflow-y: auto !important;
   font-family: "Roboto" !important;
-  font-size: 14px !important;
+  font-size: 12px !important;
   background: #f4faff !important;
   color: #4e342e;
   font-weight: 500;
@@ -1720,3 +1720,24 @@ g[class$='creditgroup'] {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.modal-content{
+  width: 180% !important;
+  margin-left: -74px;
+}
+.mat-form-field-infix {
+  width: 100% !important;
+  
+}
+.mat-form-field {
+  width: 100% !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: white !important;
+}
+.cdk-global-overlay-wrapper, .cdk-overlay-container {
+  z-index: 2000 !important;
+}

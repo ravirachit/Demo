@@ -10,10 +10,10 @@
     </div>
   
   <div class="col-sm-4 login_right_sec">
-      <h4>Welcome to KdnRthr Employee Portal</h4>
+      <h4>Welcome to imrthr Employee Portal</h4>
        <div class="">
          <div class="form" >
-           <form class="loginForm">
+           <form class="loginForm" [formGroup]="logInForm" (ngSubmit)="onSubmit()">
              <!-- <img src="assets/logo.png"> -->
              <div>
      
@@ -21,17 +21,26 @@
                <label for="phone">Mobile</label>
                <div class="inner-icon leftIcon">
                  <img class="input-icon-img phone_icon" src="assets/call-answer.svg">
-                 <input class="input-field" type="text" maxlength="10" placeholder="Please enter your registered mobile number" numbersOnly>
+                 <input class="input-field" type="text" maxlength="10" placeholder="Please enter your registered mobile number" numbersOnly formControlName="phone">
                </div>
+               <span *ngIf="logInForm.controls['phone'].invalid && (logInForm.controls['phone'].dirty || logInForm.controls['phone'].touched || isInvalidForm)" >
+                <span *ngIf="logInForm.controls['phone'].errors.required" class="errors1"> Phone is required.</span>
+                </span>
                <div style="margin-top: 5%">
                  <label for="password">Password</label>
                  <div class="inner-icon leftIcon">
                    <img class="input-icon-img" src="assets/lock.svg">
-                   <input class="input-field" type="password" placeholder="Enter password">
+                   <input class="input-field" type="password" placeholder="Enter password" formControlName="password">
                  </div>
                </div>
+               <div *ngIf="logInForm.controls['password'].invalid && (logInForm.controls['password'].dirty || logInForm.controls['password'].touched || isInvalidForm)" >
+                <div *ngIf="logInForm.controls['password'].errors.required" class="errors1"> Password is required.</div>
+              </div>
                <div>
-                 <button type="submit" class="loginBtn" (click)="proceedLogin()">LOGIN</button>
+                 <button type="submit" class="loginBtn">LOGIN</button>
+                 <p>Not signed up yet!  
+                  <a routerLink="/sign-up" routerLinkActive="active">Sign Up</a>
+                </p>
                </div>
              </div>
            </div>

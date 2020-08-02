@@ -10,4 +10,148 @@
     <div class="container-fluid">
         <h2 class="tilepage">Section Wise Data</h2>
     </div>
+
+    <mat-card>
+     <p class="p1">Refrence Details
+     <i (click)="openModal(content)" class="fa1 fa-plus" aria-hidden="true"></i>
+    </p>
+    <table>
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Age</th>
+            <th>Action</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor= 'let data of detailsArrayData;let index=index'>
+<!-- <ng-container *ngIf="data.isActive"> -->
+  <tr>
+    <td>{{data.firstName}}</td>
+    <td>{{data.middleName}}</td>
+    <td>{{data.lastName}}</td>
+    <td>{{data.dob | date:'dd MMM, yyyy '}}</td>
+    <td>{{data.age}}</td> 
+     <td><button class="fa fa-eye" aria-hidden="true"  (click)="onView(data,content)"></button>
+      <button class="fa fa-pencil-square-o" aria-hidden="true" (click)="onEdit(data,content,index)"></button>
+      <button class="fa fa-trash-o" aria-hidden="true" (click)='onDelete(data,index)'></button></td>
+</tr>
+<!-- </ng-container> -->
+          </ng-container>
+
+        </tbody>
+        </table>
+      </mat-card>
+
+        <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+              <button type="button" (click)='onClose()' >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+        <form class="form" [formGroup]="detailsForm" (ngSubmit)="onSave()">
+            <mat-card>
+              <p>Personal Information</p><br>
+                    <div class="row">
+                      <div class="col-3">
+                        <mat-form-field >
+                        <mat-label class="text">First Name</mat-label>
+                        <input matInput formControlName="firstName">
+                      </mat-form-field>
+                      </div>
+            
+                      <div class="col-3">
+                        <mat-form-field >
+                        <mat-label >Middle Name</mat-label>
+                        <input matInput formControlName="middleName">
+                      </mat-form-field>
+                    </div>
+                  
+            
+                    <div class="col-3">
+                      
+                        <mat-form-field >
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastName">
+                      </mat-form-field>
+                      </div>
+                      <div class="col-3">
+                        <mat-form-field>
+                          <mat-label >Date of Birth</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="dob">
+                            <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                       </mat-form-field> 
+                       </div>
+                       <div class="col-3">
+                        <mat-form-field >
+                        <mat-label>Age</mat-label>
+                        <input matInput formControlName="age">
+                      </mat-form-field>
+                       </div>
+            
+                        <div class="col-3" >
+                          <mat-form-field >
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender">
+                          <mat-option value="male">Male</mat-option>
+                          <mat-option value="female">Female</mat-option>
+                          <mat-option value="other">Other</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                 </div> 
+                 <div class="col-3">
+                  <mat-form-field 
+                  >
+                   <mat-label>Blood Group</mat-label>
+                   <mat-select formControlName="bg">
+                     <mat-option value="o-">O-</mat-option>
+                     <mat-option value="o+">O+</mat-option>
+                     <mat-option value="a-">A-</mat-option>
+                     <mat-option value="a+">A+</mat-option>
+                     <mat-option value="b-">B-</mat-option>
+                     <mat-option value="b+">B+</mat-option>
+                     <mat-option value="ab-">AB-</mat-option>
+                     <mat-option value="ab+">AB+</mat-option>
+                   </mat-select>
+                 </mat-form-field>
+                 </div>
+            
+            <div class="col-3">
+                        <mat-form-field >
+                      <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="email">
+                       </mat-form-field><br>
+            </div>
+            
+            <div class="col-3">
+                        <mat-form-field >
+                      <mat-label>Phone</mat-label>
+                    <input matInput type="number" formControlName="phone">
+                       </mat-form-field><br>
+            </div>
+            
+            </div>
+            </mat-card>
+           
+              </form>
+          
+        
+        
+            </div>
+            <div class="modal-footer">
+              
+              <button type="button" (click)='onCancel()'>cancel</button>
+              <button (click)='onSave()'>Save</button>
+            </div>
+
+          </ng-template>
+          
 </main>
