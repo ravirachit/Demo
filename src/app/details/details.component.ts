@@ -73,7 +73,7 @@ this.detailsArrayData = (JSON.parse(localStorage.getItem("detailsFormData")) || 
       this.modalService.dismissAll()
       this.router.navigate(['details'])
   }
-
+// jsut for testing
   onEdit(data,content,index){
     this.detailsForm.controls['firstName'].setValue(data.firstName);
     this.detailsForm.controls['middleName'].setValue(data.middleName);
