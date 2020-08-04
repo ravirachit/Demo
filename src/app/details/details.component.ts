@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -16,6 +17,8 @@ export class DetailsComponent implements OnInit {
   invalidForm:boolean;
   detailsObjData:any={};
   index:number;
+  changeButton:string;
+  isView:boolean;
 
   constructor(public formBuilder:FormBuilder,
     private modalService: NgbModal,
@@ -38,7 +41,9 @@ export class DetailsComponent implements OnInit {
 
 this.detailsArrayData = (JSON.parse(localStorage.getItem("detailsFormData")) || []);
   }
+  
   onSave(){
+
     this.invalidForm=true;
     if(this.detailsForm.invalid){
       return;
@@ -46,35 +51,45 @@ this.detailsArrayData = (JSON.parse(localStorage.getItem("detailsFormData")) || 
       this.invalidForm=false
       this.detailsObjData=this.detailsForm.value;
        this.detailsObjData['isUpdated'] =true; 
+       this.detailsForm.reset();
+       
+
       if(this.index == undefined){
         this.detailsArrayData.push(this.detailsObjData);
         localStorage.setItem('detailsFormData',JSON.stringify(this.detailsArrayData));
         this.modalService.dismissAll()
+        
       }else{
       this.detailsArrayData[this.index] = this.detailsObjData;
       localStorage.setItem('detailsFormData',JSON.stringify(this.detailsArrayData));
       this.index=undefined;
       this.modalService.dismissAll()
+     
       }
     }
   }
   openModal(content) {
     this.modalService.open(content);
+    this.isView=false;
+    this.changeButton= 'Save'
+    this.detailsForm.reset()
   }
   onCancel(){
-      this.modalService.dismissAll()
-      this.router.navigate(['details']);
+      this.modalService.dismissAll()  
   }
 
-  onDelete(data){
-    this.detailsArrayData.splice(data,1);
+  onDelete(data,cIndex){
+    this.detailsArrayData.splice(cIndex,1);
+    localStorage.setItem('detailsFormData',JSON.stringify(this.detailsArrayData));
   }
   onClose(){
       this.modalService.dismissAll()
-      this.router.navigate(['details'])
   }
   // check
   onEdit(data,content,index){
+    this.openModal(content);
+    this.changeButton='Update'
+    this.detailsForm.enable()
     this.detailsForm.controls['firstName'].setValue(data.firstName);
     this.detailsForm.controls['middleName'].setValue(data.middleName);
     this.detailsForm.controls['lastName'].setValue(data.lastName);
@@ -85,8 +100,14 @@ this.detailsArrayData = (JSON.parse(localStorage.getItem("detailsFormData")) || 
     this.detailsForm.controls['email'].setValue(data.email);
     this.detailsForm.controls['phone'].setValue(data.phone);
     this.index = index;
-this.openModal(content);
+    
   }
+
+  onView(data,content,index){
+    this.onEdit(data,content,index)
+    this.isView = true;
+    this.detailsForm.disable()
+    
+  }
+ 
 }
-
-

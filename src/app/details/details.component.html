@@ -146,10 +146,13 @@
         
         
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer"*ngIf=!isView>
               
               <button type="button" (click)='onCancel()'>cancel</button>
-              <button (click)='onSave()'>Save</button>
+              <button type="button" (click)='onSave()'>{{changeButton}} </button>
+            </div>
+            <div *ngIf=isView>
+              <button type="button" (click)='onCancel()'>Ok</button>
             </div>
 
           </ng-template>
